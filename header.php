@@ -28,9 +28,10 @@ Released   : 20110725
 		</div>
 		<div id="search">
 			<?php
+				$bob = $_SESSION['bob'];
 				if( isset( $_SESSION['li'] ) ) {
 					echo "<form method='post' action='logout.php'>";
-							echo "<input type='submit' id='logout_button' value='Log Out' />";
+							echo "<input type='submit' id='logout_button' value=$bob />";
 					echo "</form>";
 				} else {
 					echo "<form method='post' action='login.php'>";

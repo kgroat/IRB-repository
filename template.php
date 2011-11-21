@@ -18,8 +18,27 @@
 <div id="wrapper">
 	<div id="page">
 		<div id="content">
-			
-			<!-- Insert your code here -->
+		
+			<div class="post">
+				<div class="bg1">
+					<div class="bg2">
+						<div class="bg3">
+							<h2 class="title"></h2>
+							<div class="entry">
+								<?php 
+									if(isset($li)){
+										echo "Your username is $li";
+										$_SESSION['bob'] = "awesomesauce";
+									}else{
+										echo "You are not logged in";
+									}
+								?>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			
 		</div>
 	</div>
