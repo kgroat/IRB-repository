@@ -28,20 +28,20 @@ Released   : 20110725
 		</div>
 		<div id="search">
 			<?php
+				$bob = $_SESSION['bob'];
 				if( isset( $_SESSION['li'] ) ) {
 					echo "<form method='post' action='logout.php'>";
-							echo "<input type='submit' id='logout_button' value='Log Out' />";
+							echo "<input type='submit' id='logout_button' value=$bob />";
 					echo "</form>";
 				} else {
 					echo "<form method='post' action='login.php'>";
 						echo "<fieldset>";
-							echo "<input type='text' name='login' id='login' size='10' />";
-							echo "<input type='password' name='password' id='password' size='10' />";
+							echo "<input type='text' name='login' id='login' size='15' />";
+							echo "<input type='password' name='password' id='password' size='15' />";
 							echo "<input type='submit' id='login_button' value='Login' />";
 						echo "</fieldset>";
 					echo "</form>";
 				}
-				echo "</fieldset>";
 			?>
 		</div>
 	</div>
@@ -61,5 +61,6 @@ Released   : 20110725
 
 	<!-- end #menu -->
 	
+</div>
 </body>
 </html>
