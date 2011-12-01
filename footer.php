@@ -32,7 +32,7 @@ Released   : 20110725
 						<li><a href="#">Check pending forms</a></li>
 						<li><a href="#">(If Faculty)Check student forms</a></li>
 						<li><a href="#">(If IRB)Approve forms</a></li>
-						<li><a href="#">(If IRB Admin)IRB Administrator page</a></li>
+						<li><a href="admin.php">(If IRB Admin)IRB Administrator page</a></li>
 					</ul>
 				</li>
 			</ul>

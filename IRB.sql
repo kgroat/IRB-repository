@@ -21,6 +21,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 DROP DATABASE IF EXISTS IRB;
 CREATE DATABASE IF NOT EXISTS IRB;
+CREATE USER 'assist'@'localhost' identified by 'assist';
 GRANT ALL PRIVILEGES ON IRB.* to 'assist'@'localhost' identified by 'assist';
 USE IRB;
 
@@ -253,6 +254,15 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 -- Dumping data for table `users`
 --
+
+INSERT INTO `users` (`username`, `password`, `usertype`) VALUES
+('dwoodruf', 'taco', 'irb_admin');
+INSERT INTO `users` (`username`, `password`, `usertype`) VALUES
+('pthomas', 'pass', 'student');
+INSERT INTO `users` (`username`, `password`, `usertype`) VALUES
+('ajenkin', 'pass', 'student');
+INSERT INTO `users` (`username`, `password`, `usertype`) VALUES
+('banana', 'pass', 'student');
 
 
 -- --------------------------------------------------------
