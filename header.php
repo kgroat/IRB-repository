@@ -23,7 +23,7 @@ Released   : 20110725
 <div id="wrapper">
 	<div id="header">
 		<div id="logo">
-			<h1><a href="#">RidingHood</a></h1>
+			<h1><a href="#">Institutional Review Board</a></h1>
 			<p> design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a></p>
 		</div>
 		<div id="search">

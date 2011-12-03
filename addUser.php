@@ -3,15 +3,12 @@
 		<title>Enter your information</title>
 	</head>
 	<body>
-		<?php
-			session_start();
-		?>
-		<?php
-			include 'register.php';
+<?php
+
+			//include 'register.php';
 			include 'db_connect.php';
-			$li = $_SESSION['li'];
-		?>
-		<?php
+			
+
 			echo "<form method='post' action='register.php'>";
 				echo "<fieldset>";
 					//Get user ID
@@ -43,6 +40,6 @@
 			{
 				echo "<div class=\"error\" >The passwords you entered did not match.  Please try again.";
 			}
-		?>
+?>
 	</body>
 </html>

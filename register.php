@@ -1,11 +1,12 @@
 <?php
-	session_start();
-?>
-<?php
+	//session_start();
+	//if(!isset($_SESSION['li'])){
+	//	header("Location: index.html");
+	//}
+
 	include 'db_connect.php';
-	$li = $_SESSION['li'];
-?>
-<?php
+	//$li = $_SESSION['li'];
+
 	//Look for user in DB, protect against mysql injection
 	$li = mysqli_real_escape_string($db, $_POST['login']);
 	$pw = mysqli_real_escape_string($db, $_POST['password']);
