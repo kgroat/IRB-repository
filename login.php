@@ -22,8 +22,8 @@
 					<div class="bg2">
 						<div class="bg3">
 							<?php
-							$li = mysqli_real_escape_string($_POST['login']);
-							$pw = mysqli_real_escape_string($_POST['password']);
+							$li = mysqli_real_escape_string($db, $_POST['login']);
+							$pw = mysqli_real_escape_string($db, $_POST['password']);
 						   	$query = "SELECT * FROM users WHERE username = '$li' AND password = sha('$pw');";
 						   	$result = mysqli_query($db, $query);
 						   	if ($row = mysqli_fetch_array($result)) {

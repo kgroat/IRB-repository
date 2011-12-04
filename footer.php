@@ -27,8 +27,8 @@ Released   : 20110725
 				<li>
 					<h2>Actions</h2>
 					<ul>
-						<li><a href="#">Create new form</a></li>
-						<li><a href="#">Edit saved forms</a></li>
+						<li><a href="makeForm.php">Create new form</a></li>
+						<li><a href="applications.php">Edit saved forms</a></li>
 						<li><a href="#">Check pending forms</a></li>
 						<li><a href="#">(If Faculty)Check student forms</a></li>
 						<li><a href="#">(If IRB)Approve forms</a></li>

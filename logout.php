@@ -11,6 +11,7 @@ if(!isset($_SESSION['li'])){
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Logged Out</title>
 <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<meta HTTP-EQUIV='REFRESH' content='0; url=index.php'/>
 </head>
 <body>
 <?php
