@@ -23,15 +23,15 @@ Released   : 20110725
 <div id="wrapper">
 	<div id="header">
 		<div id="logo">
-			<h1><a href="#">Institutional Review Board</a></h1>
-			<p> design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a></p>
+			<h1><a href="#">IRB Application toolkit</a></h1>
 		</div>
 		<div id="search">
 			<?php
-				$bob = $_SESSION['bob'];
 				if( isset( $_SESSION['li'] ) ) {
 					echo "<form method='post' action='logout.php'>";
-							echo "<input type='submit' id='logout_button' value=$bob />";
+						echo "<fieldset>";
+							echo "<input type='submit' id='logout_button' value='Log Out' />";
+						echo "</fieldset>";
 					echo "</form>";
 				} else {
 					echo "<form method='post' action='login.php'>";
