@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 04, 2011 at 10:46 AM
+-- Generation Time: Dec 04, 2011 at 09:46 PM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -31,12 +31,12 @@ USE IRB;
 --
 
 CREATE TABLE IF NOT EXISTS `application` (
-  `pri_key` int(11) NOT NULL,
   `type` enum('exempt','expedited') NOT NULL,
   `form_key` int(11) NOT NULL,
   `consent_key` int(11) NOT NULL,
+  `pri_key` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`pri_key`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `application`
@@ -85,11 +85,10 @@ CREATE TABLE IF NOT EXISTS `exempt` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `expedited`
+-- Table structure for table `expedited_1`
 --
 
-CREATE TABLE IF NOT EXISTS `expedited` (
-  `pri_key` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `expedited_1` (
   `title` varchar(256) DEFAULT NULL,
   `abstract` blob,
   `q1` tinyint(1) DEFAULT NULL,
@@ -103,28 +102,9 @@ CREATE TABLE IF NOT EXISTS `expedited` (
   `q8` tinyint(1) DEFAULT NULL,
   `irb_date` date DEFAULT NULL,
   `irb_nbr` int(11) DEFAULT NULL,
+  `pri_key` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`pri_key`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `expedited`
---
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `expedited_1`
---
-
-CREATE TABLE IF NOT EXISTS `expedited_1` (
-  `pri_key` int(11) NOT NULL,
-  `form_key` int(11) DEFAULT NULL,
-  `rationale` blob,
-  `methods` blob,
-  PRIMARY KEY (`pri_key`),
-  UNIQUE KEY `form_key` (`form_key`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `expedited_1`
@@ -138,17 +118,13 @@ CREATE TABLE IF NOT EXISTS `expedited_1` (
 --
 
 CREATE TABLE IF NOT EXISTS `expedited_2` (
-  `pri_key` int(11) NOT NULL,
   `form_key` int(11) DEFAULT NULL,
-  `sex` enum('m','f','both') DEFAULT NULL,
-  `min_age` int(11) DEFAULT NULL,
-  `max_age` int(11) DEFAULT NULL,
-  `q1` tinyint(1) DEFAULT NULL,
-  `q2` tinyint(1) DEFAULT NULL,
-  `recruitment` blob,
+  `rationale` blob,
+  `methods` blob,
+  `pri_key` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`pri_key`),
   UNIQUE KEY `form_key` (`form_key`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `expedited_2`
@@ -162,14 +138,17 @@ CREATE TABLE IF NOT EXISTS `expedited_2` (
 --
 
 CREATE TABLE IF NOT EXISTS `expedited_3` (
-  `pri_key` int(11) NOT NULL,
   `form_key` int(11) DEFAULT NULL,
-  `oral` tinyint(1) DEFAULT NULL,
-  `written` tinyint(1) DEFAULT NULL,
-  `assent` tinyint(1) DEFAULT NULL,
+  `sex` enum('m','f','both') DEFAULT NULL,
+  `min_age` int(11) DEFAULT NULL,
+  `max_age` int(11) DEFAULT NULL,
+  `q1` tinyint(1) DEFAULT NULL,
+  `q2` tinyint(1) DEFAULT NULL,
+  `recruitment` blob,
+  `pri_key` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`pri_key`),
   UNIQUE KEY `form_key` (`form_key`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `expedited_3`
@@ -183,15 +162,14 @@ CREATE TABLE IF NOT EXISTS `expedited_3` (
 --
 
 CREATE TABLE IF NOT EXISTS `expedited_4` (
-  `pri_key` int(11) NOT NULL,
   `form_key` int(11) DEFAULT NULL,
-  `privacy` blob,
-  `confidentiality` blob,
-  `recorded` tinyint(1) DEFAULT NULL,
-  `records` blob,
+  `oral` tinyint(1) DEFAULT NULL,
+  `written` tinyint(1) DEFAULT NULL,
+  `assent` tinyint(1) DEFAULT NULL,
+  `pri_key` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`pri_key`),
   UNIQUE KEY `form_key` (`form_key`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `expedited_4`
@@ -205,18 +183,40 @@ CREATE TABLE IF NOT EXISTS `expedited_4` (
 --
 
 CREATE TABLE IF NOT EXISTS `expedited_5` (
-  `pri_key` int(11) NOT NULL,
+  `form_key` int(11) DEFAULT NULL,
+  `privacy` blob,
+  `confidentiality` blob,
+  `recorded` tinyint(1) DEFAULT NULL,
+  `records` blob,
+  `pri_key` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`pri_key`),
+  UNIQUE KEY `form_key` (`form_key`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `expedited_5`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `expedited_6`
+--
+
+CREATE TABLE IF NOT EXISTS `expedited_6` (
   `form_key` int(11) DEFAULT NULL,
   `risk` blob,
   `procedures` blob,
   `benefits` blob,
   `outweigh` blob,
+  `pri_key` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`pri_key`),
   UNIQUE KEY `form_key` (`form_key`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data for table `expedited_5`
+-- Dumping data for table `expedited_6`
 --
 
 
@@ -271,3 +271,6 @@ CREATE TABLE IF NOT EXISTS `users_to_applications` (
 -- Dumping data for table `users_to_applications`
 --
 
+INSERT INTO `users_to_applications` (`user`, `application_key`) VALUES
+('admin', 0),
+('admin', 0);
