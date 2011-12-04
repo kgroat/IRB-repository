@@ -32,7 +32,7 @@ Released   : 20110725
 								$type = $_SESSION['type'];
 								echo "<li><a href='makeForm.php'>Create new form</a></li>";
 								echo "<li><a href='applications.php'>Edit saved forms</a></li>";
-								echo "<li><a href='#'>Check pending forms</a></li>";
+								echo "<li><a href='pend.php'>Check pending forms</a></li>";
 								if($type == 'faculty' || $type == 'irb_member' || $type == 'irb_admin'){ echo "<li><a href='#'>Check student forms</a></li>"; }
 								if($type == 'irb_member' || $type == 'irb_admin'){ echo "<li><a href='#'>Approve forms</a></li>"; }
 								if($type == 'irb_admin'){ echo "<li><a href='admin.php'>IRB Administrator page</a></li>"; }

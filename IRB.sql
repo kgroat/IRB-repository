@@ -274,3 +274,20 @@ CREATE TABLE IF NOT EXISTS `users_to_applications` (
 INSERT INTO `users_to_applications` (`user`, `application_key`) VALUES
 ('admin', 0),
 ('admin', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_to_applications`
+--
+
+CREATE TABLE IF NOT EXISTS `irb_to_applications` (
+  `user` varchar(40) NOT NULL,
+  `application_key` int(11) NOT NULL,
+  `status` varchar(40) NOT NULL,
+  `comment` blob
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users_to_applications`
+--
