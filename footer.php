@@ -27,12 +27,17 @@ Released   : 20110725
 				<li>
 					<h2>Actions</h2>
 					<ul>
-						<li><a href="makeForm.php">Create new form</a></li>
-						<li><a href="applications.php">Edit saved forms</a></li>
-						<li><a href="#">Check pending forms</a></li>
-						<li><a href="#">(If Faculty)Check student forms</a></li>
-						<li><a href="#">(If IRB)Approve forms</a></li>
-						<li><a href="admin.php">(If IRB Admin)IRB Administrator page</a></li>
+						<?php
+							if(isset($_SESSION['li'])){
+								$type = $_SESSION['type'];
+								echo "<li><a href='makeForm.php'>Create new form</a></li>";
+								echo "<li><a href='applications.php'>Edit saved forms</a></li>";
+								echo "<li><a href='#'>Check pending forms</a></li>";
+								if($type == 'faculty' || $type == 'irb_member' || $type == 'irb_admin'){ echo "<li><a href='#'>Check student forms</a></li>"; }
+								if($type == 'irb_member' || $type == 'irb_admin'){ echo "<li><a href='#'>Approve forms</a></li>"; }
+								if($type == 'irb_admin'){ echo "<li><a href='admin.php'>IRB Administrator page</a></li>"; }
+							}
+						?>
 					</ul>
 				</li>
 			</ul>

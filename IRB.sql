@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 31, 2011 at 05:24 AM
+-- Generation Time: Dec 04, 2011 at 10:46 AM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.1
 
@@ -21,7 +21,6 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 DROP DATABASE IF EXISTS IRB;
 CREATE DATABASE IF NOT EXISTS IRB;
-CREATE USER 'assist'@'localhost' identified by 'assist';
 GRANT ALL PRIVILEGES ON IRB.* to 'assist'@'localhost' identified by 'assist';
 USE IRB;
 
@@ -30,7 +29,6 @@ USE IRB;
 --
 -- Table structure for table `application`
 --
-
 
 CREATE TABLE IF NOT EXISTS `application` (
   `pri_key` int(11) NOT NULL,
@@ -256,14 +254,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`username`, `password`, `usertype`) VALUES
-('dwoodruf', 'taco', 'irb_admin');
-INSERT INTO `users` (`username`, `password`, `usertype`) VALUES
-('pthomas', 'pass', 'student');
-INSERT INTO `users` (`username`, `password`, `usertype`) VALUES
-('ajenkin', 'pass', 'student');
-INSERT INTO `users` (`username`, `password`, `usertype`) VALUES
-('banana', 'pass', 'student');
-
+('admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'irb_admin');
 
 -- --------------------------------------------------------
 

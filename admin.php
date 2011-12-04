@@ -48,11 +48,6 @@ Released   : 20110725
 			</div>
 
 		</div>
-		<!-- end #content -->
-		
-		<!-- end #sidebar -->
-
-	<!-- end #page -->
 </div>
 <?php
    	include 'footer.php';
