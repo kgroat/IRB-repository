@@ -33,16 +33,15 @@
 	else
 	{
 		//Check for matching passwords, redirect if there's a mismatch
-		if($pw1 == $pw2)
-		{
-		$query = "INSERT INTO users (username, password) VALUES ('$li', SHA('$pw'));";
-		$addResponse = mysqli_query($db, $query) or die("Error querying database");
-		$_SESSION['li'] = $li;
-		$_SESSION['type'] = 'student';
-		header('Location: userCreated.php');
-		//Redirect to login page with "User Added" message
-		//*******************KEVIN NEEDS TO LOOK AT THIS******************************************************************
-		//I only had to do a couple of minor tweaks, otherwise looks good! - Kevin
+		if($pw1 == $pw2){
+			$query = "INSERT INTO users (username, password) VALUES ('$li', SHA('$pw'));";
+			$addResponse = mysqli_query($db, $query) or die("Error querying database");
+			$_SESSION['li'] = $li;
+			$_SESSION['type'] = 'student';
+			header('Location: userCreated.php');
+			//Redirect to login page with "User Added" message
+			//*******************KEVIN NEEDS TO LOOK AT THIS******************************************************************
+			//I only had to do a couple of minor tweaks, otherwise looks good! - Kevin
 		}
 		else
 		{

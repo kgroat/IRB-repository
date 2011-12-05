@@ -1,4 +1,6 @@
+<<<<<<< HEAD
 <?php session_start(); ?>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta name="keywords" content="" />
@@ -8,17 +10,14 @@
 <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
 <body>
-
 <?php
 	include 'header.php';
 	include 'db_connect.php';
 	$li = $_SESSION['li'];
 ?>
-
 <div id="wrapper">
 	<div id="page">
 		<div id="content">
-		
 			<div class="post">
 				<div class="bg1">
 					<div class="bg2">
