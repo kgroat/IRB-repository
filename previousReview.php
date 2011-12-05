@@ -4,7 +4,7 @@
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>Submitted Applications</title>
+<title>Previously Reviewed</title>
 <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
 <body>
@@ -26,7 +26,7 @@
 							<h2 class="title"></h2>
 							<div class="entry">
 								<?php
-									$query = "SELECT * FROM users_to_applications WHERE user = '$li';";
+									$query = "SELECT * FROM irb_to_applications WHERE user = '$li' AND status='Approved' OR status='Denied';";
 									$result = mysqli_query($db, $query);
 						   			while ($row = mysqli_fetch_array($result)) {
 						   				$app = $row['application_key'];
@@ -38,27 +38,11 @@
 											$result3 = mysqli_query($db, $query);
 											if($row = mysqli_fetch_array($result3)) {
 												$name = $row['title'];
-												$query = "SELECT * FROM irb_to_applications WHERE application_key = '$form';";
-												$result4 = mysqli_query($db, $query);
-												if($row = mysqli_fetch_array($result4)) {
-													$status = $row['status'];
-													echo "<p><a href='expedited1.php?key=$app'>$name</a> -- $status</p>";
-													$comment=$row['comment'];
-													if($comment==NULL || $comment=='') {
-													} else {
-													echo "<p>Reviewer's Comment: $comment </p>";
-													}
-												} else {
-													echo "<p><a href='expedited1.php?key=$app'>$name</a> -- Submitted</p>";
-												}
-												echo "<hr />";
+												echo "<p><a href='reviewExpedited1.php?key=$app'>$name</a></p>";
 											}
 						   				}
 						   			}
 								?>
-								<form method='post' action='makeForm.php'>
-									<input type='submit' id='makeForm' value='Create a new form' />
-								</form>
 							</div>
 						</div>
 					</div>

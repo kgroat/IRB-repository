@@ -40,7 +40,7 @@ Released   : 20110725
     	<label for="username">Search User:</label>
     	<input type="text" id="username" name="username" />
     	<input type="submit" value="Find User" name="submit" />
-    </form>
+    </form><br/>
     	<h3>Assign Applications</h3>
 	<form method="post" action="assign.php">
     	<input type="submit" value="Assign" name="submit" />
