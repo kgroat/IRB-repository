@@ -19,7 +19,7 @@
 				$recorded = $_POST['recorded'] == 'on';
 				$records = mysqli_real_escape_string($db, $_POST['records']);
 				
-				$query = "UPDATE expedited_5 SET privacy = '$privacy', confidentiality = '$confidentiality', recorded = '$recorded', records = '$records';";
+				$query = "UPDATE expedited_5 SET privacy = '$privacy', confidentiality = '$confidentiality', recorded = '$recorded', records = '$records' WHERE form_key = '$form';";
 				mysqli_query($db, $query);
 			}
 		}

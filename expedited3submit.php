@@ -20,7 +20,7 @@
 				$q1 = $_POST['q1'] == 'on';
 				$q2 = $_POST['q2'] == 'on';
 				$recruitment = mysqli_real_escape_string($db, $_POST['recruitment']);
-				$query = "UPDATE expedited_3 SET sex = '$sex', min_age = '$min_age', max_age = '$max_age', q1 = '$q1', q2 = '$q2', recruitment = '$recruitment';";
+				$query = "UPDATE expedited_3 SET sex = '$sex', min_age = '$min_age', max_age = '$max_age', q1 = '$q1', q2 = '$q2', recruitment = '$recruitment' WHERE form_key = '$form';";
 				mysqli_query($db, $query);
 			}
 		}

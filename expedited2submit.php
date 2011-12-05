@@ -16,7 +16,7 @@
 				//Form exists, and user has permission to edit it
 				$rationale = mysqli_real_escape_string($db, $_POST['rationale']);
 				$methods = mysqli_real_escape_string($db, $_POST['methods']);
-				$query = "UPDATE expedited_2 SET rationale = '$rationale', methods = '$methods';";
+				$query = "UPDATE expedited_2 SET rationale = '$rationale', methods = '$methods' WHERE form_key = '$form';";
 				mysqli_query($db, $query);
 			}
 		}

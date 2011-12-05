@@ -18,7 +18,7 @@
 				$written = $_POST['written'] == 'on';
 				$assent = $_POST['assent'] == 'on';
 				
-				$query = "UPDATE expedited_4 SET oral = '$oral', written = '$written', assent = '$assent';";
+				$query = "UPDATE expedited_4 SET oral = '$oral', written = '$written', assent = '$assent' WHERE form_key = '$form';";
 				mysqli_query($db, $query);
 			}
 		}

@@ -19,7 +19,7 @@
 				$benefits = mysqli_real_escape_string($db, $_POST['benefits']);
 				$outweigh = mysqli_real_escape_string($db, $_POST['outweigh']);
 				
-				$query = "UPDATE expedited_6 SET risk = '$risk', procedures = '$procedures', benefits = '$q1', outweigh = '$outweigh';";
+				$query = "UPDATE expedited_6 SET risk = '$risk', procedures = '$procedures', benefits = '$q1', outweigh = '$outweigh' WHERE form_key = '$form';";
 				mysqli_query($db, $query);
 			}
 		}
