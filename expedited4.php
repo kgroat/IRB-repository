@@ -44,9 +44,9 @@
 												
 												echo "<form method='post' action='expedited4submit.php'>";
 													echo "<input type='hidden' name='app' id='app' value='$app'/>";
-													echo "<p><input type='checkbox' name='oral' id='oral' "; if($q1){ echo "checked"; } echo " /> Oral consent?</p>";
-													echo "<p><input type='checkbox' name='written' id='written' "; if($q2){ echo "checked"; } echo " /> Written consent?</p>";
-													echo "<p><input type='checkbox' name='assent' id='assent' "; if($q3){ echo "checked"; } echo " /> Assent statement to be attached?</p>";
+													echo "<p><input type='checkbox' name='oral' id='oral' "; if($oral){ echo "checked"; } echo " /> Oral consent?</p>";
+													echo "<p><input type='checkbox' name='written' id='written' "; if($written){ echo "checked"; } echo " /> Written consent?</p>";
+													echo "<p><input type='checkbox' name='assent' id='assent' "; if($assent){ echo "checked"; } echo " /> Assent statement to be attached?</p>";
 													echo "<input type='submit' value='Save and continue...' />";
 												echo "</form>";
 											}else{

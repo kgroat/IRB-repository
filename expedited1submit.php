@@ -24,7 +24,7 @@
 				$q6 = $_POST['q6'] == 'on';
 				$q7 = $_POST['q7'] == 'on';
 				$review = mysqli_real_escape_string($db, $_POST['review']);
-				$q8 = mysqli_real_escape_string($db, $_POST['q8']);
+				$q8 = $_POST['q8'] == 'on';
 				$query = "UPDATE expedited_1 SET title = '$title', abstract = '$abstract', q1 = '$q1', q2 = '$q2', q3 = '$q3', q4 = '$q4', q5 = '$q5', q6 = '$q6', q7 = '$q7', review = '$review', q8 = '$q8';";
 				mysqli_query($db, $query);
 			}
