@@ -25,10 +25,24 @@
 						<div class="bg3">
 							<h2 class="title"></h2>
 							<div class="entry">
+							
+								<form method=post action=assignController.php><h3>Select IRB Member: 
+								<select name="user">
 								<?php
-									$query = "SELECT * FROM users_to_applications WHERE user = '$li';";
+								$query = "SELECT * FROM users WHERE (usertype = 'irb_member') OR (usertype = 'irb_admin');";
+								$result0 = mysqli_query($db, $query);
+						   		while ($row = mysqli_fetch_array($result0)) {
+						   		$user = $row['username'];
+								echo "<option value=$user>$user</option>";
+								}
+								?>
+								</select></h3>
+							
+								<?php
+									$query = "SELECT * FROM users_to_applications;";
 									$result = mysqli_query($db, $query);
 						   			while ($row = mysqli_fetch_array($result)) {
+						   				$name = $row['user'];
 						   				$app = $row['application_key'];
 						   				$query = "SELECT * FROM application WHERE pri_key = '$app';";
 										$result2 = mysqli_query($db, $query);
@@ -37,27 +51,22 @@
 						   					$query = "SELECT * FROM expedited_1 WHERE pri_key = '$form';";
 											$result3 = mysqli_query($db, $query);
 											if($row = mysqli_fetch_array($result3)) {
-												$name = $row['title'];
-												$query = "SELECT * FROM irb_to_applications WHERE application_key = '$form';";
+												$title = $row['title'];
+												$query = "SELECT * FROM irb_to_applications WHERE application_key = '$app';";
 												$result4 = mysqli_query($db, $query);
 												if($row = mysqli_fetch_array($result4)) {
 													$status = $row['status'];
-													echo "<p><a href='expedited1.php?key=$app'>$name</a> -- $status</p>";
-													$comment=$row['comment'];
-													if($comment==NULL || $comment=='') {
-													} else {
-													echo "<p>Reviewer's Comment: $comment </p>";
-													}
+													//echo "<p>$name -- $status</p>";
+												
 												} else {
-													echo "<p><a href='expedited1.php?key=$app'>$name</a> -- Submitted</p>";
+													echo "<p><input type=\"checkbox\" value=\"$app\" name=\"forms[]\">$title -- Submitted by $name</p>";
 												}
-												echo "<hr />";
 											}
 						   				}
 						   			}
 								?>
-								<form method='post' action='makeForm.php'>
-									<input type='submit' id='makeForm' value='Create a new form' />
+
+									<input type='submit' id='assignMember' value='Assign Member' />
 								</form>
 							</div>
 						</div>
