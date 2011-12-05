@@ -53,6 +53,11 @@ Released   : 20110725
 			<li class="current_page_item"><a href="index.php">Home</a></li>
 			<li><a href="about.php">About</a></li>
 			<li><a href="#">Contact</a></li>
+			<?php
+				if(!isset($_SESSION['li'])){
+					echo "<li><a href='addUser.php'>Register</a></li>";
+				}
+			?>
 		</ul>
 	</div>
 

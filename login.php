@@ -29,19 +29,15 @@
 						   	if ($row = mysqli_fetch_array($result)) {
 						   		echo "<h2 class='title'><a href='#'>Login Successful</a></h2>";
 						   		echo "<div class='entry'>";
-						   			$type = $row['usertype'];
-						   			echo $row['usertype'];
 						   			echo "<p>Thanks for logging in, $li</p>\n";
 						   			echo "<p><a href='index.php'>Continue back to Home Page</a></p>";
 						   		echo "</div>";
-						        $_SESSION['li'] = $name;
+						        $_SESSION['li'] = $li;
 						        $_SESSION['type'] = $row['usertype'];
 						   	}else{
 						   		echo "<h2 class='title'><a href='#'>Login Failed</a></h2>";
 						   		echo "<div class='entry'>";
 						   			echo "<p>No user with that username / password combination; please try again.</p>";
-									echo "<p>$li</p>";
-									echo "<p>$pw</p>";
 						   		echo "</div>";
 						   	}
 						   	?>
