@@ -34,7 +34,7 @@
 	{
 		//Check for matching passwords, redirect if there's a mismatch
 		if($pw1 == $pw2){
-			$query = "INSERT INTO users (username, password) VALUES ('$li', SHA('$pw'));";
+			$query = "INSERT INTO users (username, password) VALUES ('$li', SHA('$pw1'));";
 			$addResponse = mysqli_query($db, $query) or die("Error querying database");
 			$_SESSION['li'] = $li;
 			$_SESSION['type'] = 'student';
