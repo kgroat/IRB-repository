@@ -30,15 +30,15 @@
 			}
 			else if($_GET['error'] == 'noPass')
 			{
-				echo "<div class=\"error\" >Password field blank.  Please enter a password";
+				echo "<div class=\"error\" >Password field blank.  Please enter a password.</div>";
 			}
 			else if($_GET['error'] == 'nameUsed')
 			{
-				echo "<div class=\"error\" >Username '$li' is in use already.  Please choose another or log in.";
+				echo "<div class=\"error\" >Username '$li' is in use already.  Please choose another or log in.</div>";
 			}
 			else if($_GET['error'] == 'passMismatch')
 			{
-				echo "<div class=\"error\" >The passwords you entered did not match.  Please try again.";
+				echo "<div class=\"error\" >The passwords you entered did not match.  Please try again.</div>";
 			}
 ?>
 	</body>

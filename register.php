@@ -38,14 +38,14 @@
 		//Check for matching passwords, redirect if there's a mismatch
 		if(password1 == password2)
 		{
-		$query = "INSERT INTO users (username,password) VALUES ($li,SHA('$pw'))";
-		$addResponse = mysqli_query($db,$query) or die("Error querying database");
-		//Redirect to login page with "User Added" message
-		//*******************KEVIN NEEDS TO LOOK AT THIS******************************************************************
+			$query = "INSERT INTO users (username,password) VALUES ($li,SHA('$pw'))";
+			$addResponse = mysqli_query($db,$query) or die("Error querying database");
+			//Send user to login page with "Registration successful, please log in" message
+			header('Location: login.php?error=userAdded');
 		}
 		else
 		{
-			header('Location: addUser.php?=passMismatch');
+			header('Location: addUser.php?error=passMismatch');
 			exit;
 		}
 	}
