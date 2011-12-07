@@ -1,2 +1,2 @@
-We're in charge of the Institutional Review Board, actually!
-Human test subjects, yaaaaay!
+Before installing this software package, make sure that some form of mySQL and PHP capabilities exist on the server, and that both processes are running.  Next, copy all of the files to the location in the server which will allow the files to be accessed.  Next, using shell access, source the IRB.sql file into mySQL.
+Ta-da!  You now have a shiny new IRB application toolkit on your server.
